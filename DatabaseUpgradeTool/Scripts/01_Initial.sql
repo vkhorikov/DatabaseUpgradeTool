@@ -1,28 +1,23 @@
-﻿CREATE TABLE [dbo].[Eula](
-	[EulaID] [int] NOT NULL,
+﻿CREATE TABLE [dbo].[License](
+	[LicenseID] [int] NOT NULL,
 	[Text] [nvarchar](max) NOT NULL,
 	[Version] [int] NOT NULL,
-	[ModuleID] [int] NOT NULL,
- CONSTRAINT [PK_Eula] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_License] PRIMARY KEY CLUSTERED 
 (
-	[EulaID] ASC
+	[LicenseID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
 
-ALTER TABLE [dbo].[Eula]  WITH CHECK ADD  CONSTRAINT [FK_Eula_Module] FOREIGN KEY([ModuleID])
-REFERENCES [dbo].[Module] ([ModuleID])
-GO
-
-CREATE TABLE [dbo].[EulaConsent](
-	[EulaConsentID] [int] NOT NULL,
-	[EulaID] [int] NOT NULL,
+CREATE TABLE [dbo].[LicenseConsent](
+	[LicenseConsentID] [int] NOT NULL,
+	[LicenseID] [int] NOT NULL,
 	[UserID] [int] NOT NULL,
 	[DateTime] [datetime] NOT NULL,
- CONSTRAINT [PK_EulaConsent] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_LicenseConsent] PRIMARY KEY CLUSTERED 
 (
-	[EulaConsentID] ASC
+	[LicenseConsentID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
