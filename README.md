@@ -10,7 +10,7 @@ The best practices behind this tool are described [here][L1].
 
 How to Get Started
 --------------
-To start following the database versioning best practices, you need to create a base-line script (the script containing all the objects your database has so far), place it to \Scripts as "01_Initial.sql" and execute the [Bootstrap.sql][L3] script on your database.
+To start following the database versioning best practices, you need to create a baseline script (the script containing all the objects your database has so far), place it to [Scripts][L5] as "01_Initial.sql" and execute the [Bootstrap.sql][L3] script on your database.
 
 After that, you need to adjust the [connection string][L4] and you are good to go.
 
@@ -24,9 +24,13 @@ After that, you can add new migrations to the Scripts folder and execute them ju
 
 ![Running the application](https://lh3.googleusercontent.com/D64KeZ2zA00E48R8czAkbfImTlPQXFysSiBNPEWye9Q=w843-h429-no)
 
-*Warning!* Don't forget to mark the files in the Scripts folder as Content, Copy Always:
+**Warning!** Don't forget to mark the files in the Scripts folder as Content, Copy Always:
 
 ![Running the application](https://lh3.googleusercontent.com/zSVmry_etu7gbmCE87E_-BxJAhIHY9_SzM0QH38tsNI=w336-h244-no)
+
+What if one of the scripts fails?
+--------------
+The tool executes the scripts in a transactional manner. If for example migration #4 contains an error which results in an exception, the tool will execute migrations 1, 2, and 3; migration 4 will be rollbacked entirely. The database would be marked as of version 3.
 
 Licence
 --------------
@@ -36,3 +40,4 @@ Licence
 [L2]: http://www.apache.org/licenses/LICENSE-2.0
 [L3]: src/DatabaseUpgradeTool/Bootstrap.sql
 [L4]: src/DatabaseUpgradeTool/App.config
+[L5]: src/DatabaseUpgradeTool/Scripts
