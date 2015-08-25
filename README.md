@@ -10,7 +10,7 @@ The best practices behind this tool are described [here][L1].
 
 How to Get Started
 --------------
-To start following the database versioning best practices, you need to create a baseline script (the script containing all the objects your database has so far), place it to [Scripts][L5] as "01_Initial.sql" and execute the [Bootstrap.sql][L3] script on your database.
+To start following the database versioning best practices, you need to create a baseline script (the script containing all the objects your database has so far), place it to [Scripts][L5] as "01_Initial.sql" and execute [Bootstrap.sql][L3] on your database.
 
 After that, you need to adjust the [connection string][L4] and you are good to go.
 
