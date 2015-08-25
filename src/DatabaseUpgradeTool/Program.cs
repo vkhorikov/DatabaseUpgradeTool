@@ -7,7 +7,7 @@ namespace DatabaseUpgradeTool
     /// <summary>
     /// The theory behind this tool: http://enterprisecraftsmanship.com/2015/08/10/database-versioning-best-practices/
     /// </summary>
-    public class Program
+    public static class Program
     {
         public static void Main()
         {
