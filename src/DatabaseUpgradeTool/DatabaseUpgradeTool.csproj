@@ -53,8 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Bootstrap.sql" />
-    <Content Include="Scripts\01_Initial.sql" />
-    <Content Include="Scripts\02_AddLicenceTypes.sql" />
+    <Content Include="Scripts\01_Initial.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\02_AddLicenceTypes.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

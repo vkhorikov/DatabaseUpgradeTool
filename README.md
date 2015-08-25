@@ -12,18 +12,27 @@ How to Get Started
 --------------
 To start following the database versioning best practices, you need to create a base-line script (the script containing all the objects your database has so far), place it to \Scripts as "01_Initial.sql" and execute the [Bootstrap.sql][L3] script on your database.
 
-After that, you need to adjust the connection string 
+After that, you need to adjust the [connection string][L4] and you are good to go.
 
+How to Use the Tool
+--------------
+The best way to use the tool is to copy it to your solution as a separate project:
 
+![Project structure](https://lh3.googleusercontent.com/jDln5bJl0gwyhZ-LERxybb4A4CK4J6Kapm51gmHlOIE=w273-h280-no)
 
+After that, you can add new migrations to the Scripts folder and execute them just by hitting F5:
+
+![Running the application](https://lh3.googleusercontent.com/D64KeZ2zA00E48R8czAkbfImTlPQXFysSiBNPEWye9Q=w843-h429-no)
+
+*Warning!* Don't forget to mark the files in the Scripts folder as Content, Copy Always:
+
+![Running the application](https://lh3.googleusercontent.com/zSVmry_etu7gbmCE87E_-BxJAhIHY9_SzM0QH38tsNI=w336-h244-no)
 
 Licence
 --------------
 [Apache 2 License][L2]
 
-
-
 [L1]: http://enterprisecraftsmanship.com/2015/08/10/database-versioning-best-practices/
 [L2]: http://www.apache.org/licenses/LICENSE-2.0
-[L3]: src/DatabaseUpgradeTool/DddInAction.DB/DBSchema.txt
-[L4]: DddInAction.Logic/Utils/Initer.cs
+[L3]: src/DatabaseUpgradeTool/Bootstrap.sql
+[L4]: src/DatabaseUpgradeTool/App.config
