@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 
 
-namespace DatabaseUpgradeTool
+namespace DatabaseVersioningTool
 {
-    /// <summary>
-    /// The theory behind this tool: http://enterprisecraftsmanship.com/2015/08/10/database-versioning-best-practices/
-    /// </summary>
-    public static class Program
+    public class Program
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
+            ConnectionStringSettings connectionString = ConfigurationManager.ConnectionStrings["Main"];
+            if (connectionString == null)
+            {
+                Console.WriteLine("Please add a connection string with the 'Main' key");
+                Console.ReadKey();
+                return;
+            }
+
             Console.WriteLine("Press 1 to execute updates");
             if (Console.ReadKey().KeyChar != '1')
                 return;
@@ -18,7 +24,7 @@ namespace DatabaseUpgradeTool
             Console.WriteLine();
             Console.WriteLine();
 
-            List<string> output = new SettingsManager().ExecuteUpdates();
+            IReadOnlyList<string> output = new VersionManager(connectionString.ConnectionString).ExecuteMigrations();
             foreach (string str in output)
             {
                 Console.WriteLine(str);

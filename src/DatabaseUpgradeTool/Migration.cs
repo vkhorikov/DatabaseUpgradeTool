@@ -1,29 +1,28 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 
 
-namespace DatabaseUpgradeTool
+namespace DatabaseVersioningTool
 {
-    internal class UpdateFile
+    internal class Migration
     {
         public string Name { get; private set; }
-        public string Path { get; private set; }
+        public string FilePath { get; private set; }
         public int Version { get; private set; }
 
 
-        public UpdateFile(FileInfo fileInfo)
+        public Migration(FileInfo fileInfo)
         {
             string version = fileInfo.Name.Split('_').First();
             Version = int.Parse(version);
             Name = fileInfo.Name;
-            Path = fileInfo.FullName;
+            FilePath = fileInfo.FullName;
         }
 
 
         public string GetContent()
         {
-            return File.ReadAllText(Path);
+            return File.ReadAllText(FilePath);
         }
     }
 }

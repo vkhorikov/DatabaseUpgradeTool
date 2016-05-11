@@ -22,7 +22,7 @@ The best way to use the tool is to copy it to your solution as a separate projec
 
 After that, you can add new migrations to the Scripts folder and execute them just by hitting F5:
 
-![Running the application](https://lh3.googleusercontent.com/D64KeZ2zA00E48R8czAkbfImTlPQXFysSiBNPEWye9Q=w843-h429-no)
+![Running the application](http://i.imgur.com/wJBhj3T.png)
 
 **Warning!** Don't forget to mark the files in the Scripts folder as Content, Copy Always:
 
