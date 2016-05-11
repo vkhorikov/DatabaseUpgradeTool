@@ -52,11 +52,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Bootstrap.sql" />
-    <Content Include="Migrations\01_Initial.sql">
+    <Content Include="Migrations\01_Base.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Migrations\02_AddLicenceTypes.sql">
+    <Content Include="Migrations\02_ChangeEmailColumn.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
