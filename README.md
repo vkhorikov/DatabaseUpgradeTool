@@ -6,7 +6,7 @@ About
 
 This is a database upgrade tool that works with .NET and SQL Server specifically. It is extremely light-weight: consists of only 4 classes (including Program.cs).
 
-The best practices behind this tool are described in my Pluralsight course (the link is coming soon).
+The best practices behind this tool are described in my [Pluralsight course][L6].
 
 How to Get Started
 --------------
@@ -40,3 +40,4 @@ Licence
 [L2]: http://www.apache.org/licenses/LICENSE-2.0
 [L4]: src/DatabaseUpgradeTool/App.config
 [L5]: src/DatabaseUpgradeTool/Migrations
+[L6]: https://www.pluralsight.com/courses/database-delivery-best-practices
