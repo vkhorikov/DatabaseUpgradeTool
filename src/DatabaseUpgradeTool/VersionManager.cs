@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -10,11 +10,13 @@ namespace DatabaseVersioningTool
     public class VersionManager
     {
         private readonly DBHelper _dbHelper;
+        private readonly string _migrationsDirectory;
+        
 
-
-        public VersionManager(string connectionString)
+        public VersionManager(string connectionString, string migrationsDirectory = @"Migrations\")
         {
             _dbHelper = new DBHelper(connectionString);
+            _migrationsDirectory = migrationsDirectory;
         }
 
 
@@ -79,7 +81,7 @@ namespace DatabaseVersioningTool
             // 01_MyMigration.sql
             var regex = new Regex(@"^(\d)*_(.*)(sql)$");
 
-            return new DirectoryInfo(@"Migrations\")
+            return new DirectoryInfo(_migrationsDirectory)
                 .GetFiles()
                 .Where(x => regex.IsMatch(x.Name))
                 .Select(x => new Migration(x))
